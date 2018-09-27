@@ -1,0 +1,14 @@
+D:\VS\GruulSkuul\Terminator\Terminator\obj\Debug\Terminator.csprojAssemblyReference.cache
+D:\VS\GruulSkuul\Terminator\Terminator\obj\Debug\Terminator.csproj.CoreCompileInputs.cache
+D:\VS\GruulSkuul\Terminator\Terminator\bin\Debug\Terminator.exe.config
+D:\VS\GruulSkuul\Terminator\Terminator\bin\Debug\Terminator.exe
+D:\VS\GruulSkuul\Terminator\Terminator\bin\Debug\Terminator.pdb
+D:\VS\GruulSkuul\Terminator\Terminator\obj\Debug\Terminator.exe
+D:\VS\GruulSkuul\Terminator\Terminator\obj\Debug\Terminator.pdb
+C:\Users\Raggen\Desktop\Workspace\Terminator\Terminator\bin\Debug\Terminator.exe.config
+C:\Users\Raggen\Desktop\Workspace\Terminator\Terminator\bin\Debug\Terminator.exe
+C:\Users\Raggen\Desktop\Workspace\Terminator\Terminator\bin\Debug\Terminator.pdb
+C:\Users\Raggen\Desktop\Workspace\Terminator\Terminator\obj\Debug\Terminator.csprojAssemblyReference.cache
+C:\Users\Raggen\Desktop\Workspace\Terminator\Terminator\obj\Debug\Terminator.csproj.CoreCompileInputs.cache
+C:\Users\Raggen\Desktop\Workspace\Terminator\Terminator\obj\Debug\Terminator.exe
+C:\Users\Raggen\Desktop\Workspace\Terminator\Terminator\obj\Debug\Terminator.pdb
