@@ -19,3 +19,10 @@ c:\Workspace\ECUtbildning\T800-TEH-\Terminator\obj\Debug\Terminator.csprojAssemb
 c:\Workspace\ECUtbildning\T800-TEH-\Terminator\obj\Debug\Terminator.csproj.CoreCompileInputs.cache
 c:\Workspace\ECUtbildning\T800-TEH-\Terminator\obj\Debug\Terminator.exe
 c:\Workspace\ECUtbildning\T800-TEH-\Terminator\obj\Debug\Terminator.pdb
+C:\Users\Raggen\Desktop\Workspace\T800-TEH-\Terminator\bin\Debug\Terminator.exe.config
+C:\Users\Raggen\Desktop\Workspace\T800-TEH-\Terminator\bin\Debug\Terminator.exe
+C:\Users\Raggen\Desktop\Workspace\T800-TEH-\Terminator\bin\Debug\Terminator.pdb
+C:\Users\Raggen\Desktop\Workspace\T800-TEH-\Terminator\obj\Debug\Terminator.csprojAssemblyReference.cache
+C:\Users\Raggen\Desktop\Workspace\T800-TEH-\Terminator\obj\Debug\Terminator.csproj.CoreCompileInputs.cache
+C:\Users\Raggen\Desktop\Workspace\T800-TEH-\Terminator\obj\Debug\Terminator.exe
+C:\Users\Raggen\Desktop\Workspace\T800-TEH-\Terminator\obj\Debug\Terminator.pdb

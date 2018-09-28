@@ -11,10 +11,10 @@ namespace Terminator
     {
         static void Main(string[] args)
         {
-            Menu MainMeu = new Menu();
+            Menu MainMenu = new Menu();
             while (true)
             {
-                MainMeu.TerminatorMenu();
+                MainMenu.TerminatorMenu();
             }
         }
     }

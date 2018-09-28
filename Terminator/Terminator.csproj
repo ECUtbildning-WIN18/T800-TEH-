@@ -45,8 +45,10 @@
   <ItemGroup>
     <Compile Include="Domain\Menu.cs" />
     <Compile Include="Domain\T800.cs" />
+    <Compile Include="Domain\T800List.cs" />
     <Compile Include="Domain\TargetList.cs" />
     <Compile Include="Domain\Target.cs" />
+    <Compile Include="Domain\TerminatorSelectionMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Unit.cs" />

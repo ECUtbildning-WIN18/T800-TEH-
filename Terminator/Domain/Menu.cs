@@ -8,21 +8,26 @@ namespace Terminator.Domain
 {
     class Menu
     {
-        TargetList MostWantedList = new TargetList();
-        T800 Arnold = new T800("12345");
+        T800 Arnold = new T800("Arnold", "12345", true);
+        TargetList MostWantedList = new TargetList(); // List of Targets to Terminate
         private List<Target> Target;
+        T800List T800Units = new T800List();            // DictionaryList of Terminators
+        private Dictionary<string, T800> Terminators;
         private string CurrentTarget = "No Target"; 
         private int TargetIndex = 0;
 
         public Menu()
         {
             Target = MostWantedList.GetTargets(); // We now have MostWantedList in the Menu
+            Terminators = T800Units.GetTerminators(); // Terminator DictionaryList in the Menu
         }
 
         public void TerminatorMenu()
         {
+           // T800Units.ListActiveTerminators();
+           // T800Units.ListInactiveTerminators();
             Console.WriteLine("==Skynet T800 Manual Action Overide Protocol 1.0==");
-            Console.WriteLine("\n1. Select Target\n2. Terminate Target\n3. Status\n4. Exit");
+            Console.WriteLine("\n1. Select Target\n2. Terminate Target\n3. Status Inspection\n4. Exit");
             Console.WriteLine("\nCurrent Target: "+ CurrentTarget);
             Console.Write("\nSelect Action:");
             string choise = Console.ReadLine();
@@ -42,10 +47,10 @@ namespace Terminator.Domain
                 {
                  Console.WriteLine("--ERROR--\nUser Has Selected a Non Human Target\nTermination Target must be Human");
                  }
-                 else if (Target[TargetIndex - 1].GetTargetIsAlive() == false) // Checks if Target is alive, Can't kill dead people!
-                 {
-                   Console.WriteLine("--ERROR--\nSelected Target has already been Terminated");
-                 }
+                 //else if (Target[TargetIndex - 1].GetTargetIsAlive() == false) // Checks if Target is alive, Can't kill dead people!
+                 //{
+                 //  Console.WriteLine("--ERROR--\nSelected Target has already been Terminated");
+                 //} // These lines are unessecary now since we only write alive targets to the screen
              break;
              case "2": // Terminate Target
                     TerminateTargetSubroutine(); // Terminates the Target, marking it as dead when compleate
