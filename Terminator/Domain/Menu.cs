@@ -10,7 +10,7 @@ namespace Terminator.Domain
     {
         TargetList MostWantedList = new TargetList();
         T800 Arnold = new T800("12345");
-        private Target[] Target;
+        private List<Target> Target;
         private string CurrentTarget = "No Target"; 
         private int TargetIndex = 0;
 
@@ -94,6 +94,7 @@ namespace Terminator.Domain
             System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=Hhm7aWp8gvc"); // Hast La Vista Baby T2
             CurrentTarget = "No Target";// Target has been eliminated 
             Target[TargetIndex - 1].TargetIsDead(); // And the Target is marked as dead
+            MostWantedList.RemoveTarget(TargetIndex-1); // REMOVES DEAD TARGET FROM LIST
             }
         }
     }
