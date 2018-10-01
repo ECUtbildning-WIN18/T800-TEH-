@@ -8,57 +8,46 @@ namespace Terminator.Domain
 {
     class T800List
     {
-        private Dictionary<string,T800> T800Units = new Dictionary<string,T800>();
+        private List<T800> T800Units = new List <T800>();
 
-        public T800List() { 
-        T800 Arnold = new T800("Arnold","12345", true);
-        T800 Dva = new T800("Dva","21345", true);
-        T800 RoadHog = new T800("RoadHog","31245", false);
-        T800 ReinHardt = new T800("Reinhardt","412235", false);
-        T800 Gengu = new T800("Gengu","51234", true);
-            T800Units.Add(Arnold.GetName(), Arnold);
-            T800Units.Add(Dva.GetName(), Dva);
-            T800Units.Add(RoadHog.GetName(), RoadHog);
-            T800Units.Add(ReinHardt.GetName(), ReinHardt);
-            T800Units.Add(Gengu.GetName(), Gengu);
+        public T800List() {
+            T800Units = new List<T800> {
+            new T800("Arnold","12345", false,1,2),
+            new T800("DvaBot", "21345", false, 2, 3),
+            new T800("RoadHog", "31245", false, 3, 4),
+            new T800("Reinhardt", "412235", false, 4, 4),
+            new T800("Gengu", "51234", true, 15, 20),
+        };
         }
 
-        public Dictionary<string, T800> GetTerminators()
+        public List<T800> GetTerminators()
         {
             return T800Units;
         }
-
-        public void ListInactiveTerminators()
-        {
-            int i = 1;
-            foreach (T800 target in T800Units.Values)
-            {
-                if (target.GetIsActive() == false) // if terminator isn't active the console adds him to the list 
-                {
-                    Console.WriteLine(i + ". " + target.GetName());// and writes it to the screen here
-                    i++;
-                }
-            }
-        }
-
+        
         public void ListActiveTerminators()
         {
             int i = 1;
-            foreach (T800 target in T800Units.Values)
+            foreach (T800 target in T800Units)
             {
-                if(target.GetIsActive() == true) { // if terminator is active add him to the list
-                Console.WriteLine(i +". " +target.GetName());// and write his name to the screen
+                Console.WriteLine(i +". " +target.GetName() + "\t Active:" + target.GetIsActive());// and write his name to the screen
                     i++;
-                }
+                
             }
         }
 
+        public void RemoveTarget(int target)
+        {
+            T800Units.RemoveAt(target);
+        }
+        
+                 
         public int SelectTarget(int currentTarget)
         {
             Console.WriteLine("Select Target:");
             currentTarget = Convert.ToInt32(Console.ReadLine());
             return currentTarget;
         }
-
+        
     }
 }

@@ -8,18 +8,15 @@ namespace Terminator.Domain
 {
     class Menu
     {
-        T800 Arnold = new T800("Arnold", "12345", true);
+        T800 Arnold = new T800("Arnold", "12345", true,1,2);
         TargetList MostWantedList = new TargetList(); // List of Targets to Terminate
         private List<Target> Target;
-        T800List T800Units = new T800List();            // DictionaryList of Terminators
-        private Dictionary<string, T800> Terminators;
         private string CurrentTarget = "No Target"; 
         private int TargetIndex = 0;
-
+        
         public Menu()
         {
             Target = MostWantedList.GetTargets(); // We now have MostWantedList in the Menu
-            Terminators = T800Units.GetTerminators(); // Terminator DictionaryList in the Menu
         }
 
         public void TerminatorMenu()
@@ -27,7 +24,7 @@ namespace Terminator.Domain
            // T800Units.ListActiveTerminators();
            // T800Units.ListInactiveTerminators();
             Console.WriteLine("==Skynet T800 Manual Action Overide Protocol 1.0==");
-            Console.WriteLine("\n1. Select Target\n2. Terminate Target\n3. Status Inspection\n4. Exit");
+            Console.WriteLine("\n1. Select Target\n2. Terminate Target\n3. Unit Status\n4. Terminate Unit\n5. Exit");
             Console.WriteLine("\nCurrent Target: "+ CurrentTarget);
             Console.Write("\nSelect Action:");
             string choise = Console.ReadLine();
@@ -58,7 +55,13 @@ namespace Terminator.Domain
              case "3":
                 Arnold.PrintStatus(); // Checks the Terminators Status and writes them to the screen
              break;
-             case "4":
+                case "4":
+                 Console.WriteLine("Initilize Self Terminate Protocol\n");
+                 Console.WriteLine("You have chosen Self Termination are you sure" +
+                 "you want to delete this unit?");
+                    Console.ReadLine();
+                    break;
+             case "5":
                 Environment.Exit(0); // bye!
              break;
              default:

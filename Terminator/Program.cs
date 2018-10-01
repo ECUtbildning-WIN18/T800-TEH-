@@ -12,9 +12,10 @@ namespace Terminator
         static void Main(string[] args)
         {
             Menu MainMenu = new Menu();
+            TerminatorSelectionMenu TMenu = new TerminatorSelectionMenu();
             while (true)
             {
-                MainMenu.TerminatorMenu();
+                TMenu.SelectMenu();
             }
         }
     }
