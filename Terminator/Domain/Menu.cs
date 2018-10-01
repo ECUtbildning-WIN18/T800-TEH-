@@ -8,12 +8,12 @@ namespace Terminator.Domain
 {
     class Menu
     {
-        TargetList MostWantedList = new TargetList();
-        T800 Arnold = new T800("12345");
-        private Target[] Target;
+        T800 Arnold = new T800("Arnold", "12345", true,1,2);
+        TargetList MostWantedList = new TargetList(); // List of Targets to Terminate
+        private List<Target> Target;
         private string CurrentTarget = "No Target"; 
         private int TargetIndex = 0;
-
+        
         public Menu()
         {
             Target = MostWantedList.GetTargets(); // We now have MostWantedList in the Menu
@@ -21,8 +21,10 @@ namespace Terminator.Domain
 
         public void TerminatorMenu()
         {
+           // T800Units.ListActiveTerminators();
+           // T800Units.ListInactiveTerminators();
             Console.WriteLine("==Skynet T800 Manual Action Overide Protocol 1.0==");
-            Console.WriteLine("\n1. Select Target\n2. Terminate Target\n3. Status\n4. Exit");
+            Console.WriteLine("\n1. Select Target\n2. Terminate Target\n3. Unit Status\n4. Terminate Unit\n5. Exit");
             Console.WriteLine("\nCurrent Target: "+ CurrentTarget);
             Console.Write("\nSelect Action:");
             string choise = Console.ReadLine();
@@ -42,10 +44,10 @@ namespace Terminator.Domain
                 {
                  Console.WriteLine("--ERROR--\nUser Has Selected a Non Human Target\nTermination Target must be Human");
                  }
-                 else if (Target[TargetIndex - 1].GetTargetIsAlive() == false) // Checks if Target is alive, Can't kill dead people!
-                 {
-                   Console.WriteLine("--ERROR--\nSelected Target has already been Terminated");
-                 }
+                 //else if (Target[TargetIndex - 1].GetTargetIsAlive() == false) // Checks if Target is alive, Can't kill dead people!
+                 //{
+                 //  Console.WriteLine("--ERROR--\nSelected Target has already been Terminated");
+                 //} // These lines are unessecary now since we only write alive targets to the screen
              break;
              case "2": // Terminate Target
                     TerminateTargetSubroutine(); // Terminates the Target, marking it as dead when compleate
@@ -53,7 +55,13 @@ namespace Terminator.Domain
              case "3":
                 Arnold.PrintStatus(); // Checks the Terminators Status and writes them to the screen
              break;
-             case "4":
+                case "4":
+                 Console.WriteLine("Initilize Self Terminate Protocol\n");
+                 Console.WriteLine("You have chosen Self Termination are you sure" +
+                 "you want to delete this unit?");
+                    Console.ReadLine();
+                    break;
+             case "5":
                 Environment.Exit(0); // bye!
              break;
              default:
@@ -94,6 +102,7 @@ namespace Terminator.Domain
             System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=Hhm7aWp8gvc"); // Hast La Vista Baby T2
             CurrentTarget = "No Target";// Target has been eliminated 
             Target[TargetIndex - 1].TargetIsDead(); // And the Target is marked as dead
+            MostWantedList.RemoveTarget(TargetIndex-1); // REMOVES DEAD TARGET FROM LIST
             }
         }
     }

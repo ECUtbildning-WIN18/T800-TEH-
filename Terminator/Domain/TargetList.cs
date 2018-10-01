@@ -8,11 +8,11 @@ namespace Terminator.Domain
 {
     class TargetList
     {
-        private Target[] MostWantedList;
+        private List<Target> MostWantedList;
 
         public TargetList()
         {
-            MostWantedList = new Target[] {
+            MostWantedList = new List<Target> {
             new Target("Sarah","Conor", true, true),
             new Target("John","Conor",true, true),
             new Target("Kyle","Reese", true, true),
@@ -20,20 +20,26 @@ namespace Terminator.Domain
             };
         }
 
-        public Target[] GetTargets()
+        public List<Target> GetTargets()
         {
             return MostWantedList;
         }
 
+        public void RemoveTarget(int target)
+        {
+            MostWantedList.RemoveAt(target);
+        }
+
         public void ListTargets()
         {
+            //List.Where(x => x.Name.ToString().Equals("Apple").ToList()
+            //.ForEach(x => { if (x.Name == "") { } });
             int i = 1;
-            foreach (Target target in MostWantedList)
+            foreach (var target in MostWantedList)
             {
-                Console.WriteLine(i +". "+target.GetFirstName()+ " " +target.GetLastName() +
-                "\t Human Target: " + target.GetIsHuman() + "\t Living Target: "+ target.GetTargetIsAlive());
+                Console.WriteLine($"{i} {target.GetFirstName()} {target.GetLastName()}. Human Target: {target.GetIsHuman()}");
                 i++;
-            }
+            } 
         }
 
         public int SelectTarget(int currentTarget)
