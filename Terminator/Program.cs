@@ -13,9 +13,15 @@ namespace Terminator
         {
             Menu MainMenu = new Menu();
             TerminatorSelectionMenu TMenu = new TerminatorSelectionMenu();
-            while (true)
+            bool end = false;
+            while (end == false)
             {
-                TMenu.SelectMenu();
+              end =  TMenu.SelectMenu(end);
+            }
+            end = false;
+            while (end == false)
+            {
+                MainMenu.TerminatorMenu();
             }
         }
     }

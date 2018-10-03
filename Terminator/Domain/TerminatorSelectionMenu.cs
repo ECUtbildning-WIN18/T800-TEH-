@@ -22,7 +22,7 @@ namespace Terminator.Domain
         {
             
         }
-        public void SelectMenu()
+        public bool SelectMenu(bool end)
         {
             // T800Units.ListActiveTerminators();
             // T800Units.ListInactiveTerminators();
@@ -43,7 +43,7 @@ namespace Terminator.Domain
                     Console.WriteLine("Unit " + CurrentTerminator + " ready to recive instrutions");
                     Console.ReadLine();
                     Console.Clear();
-                    MainMenu.TerminatorMenu();
+                        end = true;
                     }else { // if Terminator isnt active nothing happends
                         Console.WriteLine("Unit is Deactivated");
                         }
@@ -92,6 +92,7 @@ namespace Terminator.Domain
             }
             Console.ReadLine();
             Console.Clear();
+            return end;
         }
     }
 }

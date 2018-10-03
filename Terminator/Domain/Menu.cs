@@ -21,10 +21,10 @@ namespace Terminator.Domain
 
         public void TerminatorMenu()
         {
-           // T800Units.ListActiveTerminators();
-           // T800Units.ListInactiveTerminators();
+            // T800Units.ListActiveTerminators();
+            // T800Units.ListInactiveTerminators();
             Console.WriteLine("==Skynet T800 Manual Action Overide Protocol 1.0==");
-            Console.WriteLine("\n1. Select Target\n2. Terminate Target\n3. Unit Status\n4. Terminate Unit\n5. Exit");
+            Console.WriteLine("\n1. Select Target\n2. Terminate Target\n3. Unit Status\n4. Exit");
             Console.WriteLine("\nCurrent Target: "+ CurrentTarget);
             Console.Write("\nSelect Action:");
             string choise = Console.ReadLine();
@@ -56,14 +56,12 @@ namespace Terminator.Domain
                 Arnold.PrintStatus(); // Checks the Terminators Status and writes them to the screen
              break;
                 case "4":
-                 Console.WriteLine("Initilize Self Terminate Protocol\n");
-                 Console.WriteLine("You have chosen Self Termination are you sure" +
-                 "you want to delete this unit?");
-                    Console.ReadLine();
+                    TerminatorSelectionMenu Tmenu = new TerminatorSelectionMenu();
+                    bool end = false;
+                    while (end == false) { 
+                end = Tmenu.SelectMenu(end); // bye!
+                    }
                     break;
-             case "5":
-                Environment.Exit(0); // bye!
-             break;
              default:
                Console.WriteLine("--Unkown Action--"); // Select Better noob! :p
              break;
@@ -71,7 +69,6 @@ namespace Terminator.Domain
             Console.ReadLine();
             Console.Clear();
         }
-
         private void SetTargetSubroutine() // just some flavour fluff 
         {
             Console.WriteLine("Initilizing Termination Protocols");
